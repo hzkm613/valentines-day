@@ -8,15 +8,14 @@ const ShopPage = () => {
   const navigate = useNavigate();
 
   const handleCheckOut = () => {
-    // Pass the selectedItems and quantities to the ReceiptPage
     navigate("/receipt", {
       state: { selectedItems, quantities },
     });
   };
 
   return (
-    <div>
-      <h1>Shop</h1>
+    <div className="flex flex-col items-center pt-20">
+      <h1 className="text-2xl jetbrains-mono-title">Please select items</h1>
       <div>
         <ProductCard
           selectedItems={selectedItems}
@@ -25,7 +24,12 @@ const ShopPage = () => {
           setQuantities={setQuantities}
         />
       </div>
-      <button onClick={handleCheckOut}>Check out</button>
+      <button
+        className="jetbrains-mono-semibold cursor-pointer"
+        onClick={handleCheckOut}
+      >
+        Check out 💖
+      </button>
     </div>
   );
 };
