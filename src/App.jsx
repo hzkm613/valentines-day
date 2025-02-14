@@ -5,7 +5,7 @@ import ReceiptPage from "./Page/ReceiptPage";
 
 function App() {
   return (
-    <div className="w-screen h-screen bg-[#ECECEC]">
+    <div className="w-screen h-auto min-h-screen bg-[#ECECEC]">
       <Routes>
         <Route path="/" element={<StartPage />} />
         <Route path="/shop" element={<ShopPage />} />

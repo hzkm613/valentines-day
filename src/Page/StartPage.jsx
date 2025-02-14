@@ -35,11 +35,11 @@ const StartPage = () => {
   };
 
   return (
-    <div className="w-full h-full flex flex-col justify-center items-center">
-      <h1 className="text-xl font-bold mb-6 jetbrains-mono-title">
+    <div className="w-screen h-screen flex flex-col justify-center items-center">
+      <h1 className="text-xl text-center break-words mb-6 jetbrains-mono-title">
         Would you be my valentine?
       </h1>
-      <div className="flex flex-col">
+      <div className="flex flex-col justify-center">
         <Link to="/shop" className="inline-block jetbrains-mono-normal mb-2">
           &gt; Yes
         </Link>

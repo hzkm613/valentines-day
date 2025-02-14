@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import ProductCard from "../Components/ProductCard";
 import { useNavigate } from "react-router-dom";
 
@@ -7,6 +7,17 @@ const ShopPage = () => {
   const [quantities, setQuantities] = useState({});
   const navigate = useNavigate();
 
+  const handleSelectItem = useCallback((itemId, quantity) => {
+    setSelectedItems((prevState) => ({
+      ...prevState,
+      [itemId]: !prevState[itemId],
+    }));
+    setQuantities((prevState) => ({
+      ...prevState,
+      [itemId]: quantity,
+    }));
+  }, []);
+
   const handleCheckOut = () => {
     navigate("/receipt", {
       state: { selectedItems, quantities },
@@ -14,18 +25,20 @@ const ShopPage = () => {
   };
 
   return (
-    <div className="flex flex-col items-center pt-20">
-      <h1 className="text-2xl jetbrains-mono-title">Please select items</h1>
+    <div className="w-full h-full overflow-hidden flex flex-col items-center pt-20">
+      <h1 className="text-lg sm:text-2xl text-center jetbrains-mono-title mb-6">
+        Please Select Items
+      </h1>
       <div>
         <ProductCard
           selectedItems={selectedItems}
-          setSelectedItems={setSelectedItems}
+          setSelectedItems={handleSelectItem}
           quantities={quantities}
           setQuantities={setQuantities}
         />
       </div>
       <button
-        className="jetbrains-mono-semibold cursor-pointer"
+        className={`mt-6 px-4 py-2 text-sm sm:text-lg jetbrains-mono-semibold cursor-pointer bg-black text-white rounded-lg`}
         onClick={handleCheckOut}
       >
         Check out 💖
