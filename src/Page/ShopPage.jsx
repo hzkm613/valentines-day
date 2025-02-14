@@ -25,7 +25,7 @@ const ShopPage = () => {
   };
 
   return (
-    <div className="w-full h-full overflow-hidden flex flex-col items-center pt-20">
+    <div className="w-full h-full overflow-hidden flex flex-col items-center py-20">
       <h1 className="text-lg sm:text-2xl text-center jetbrains-mono-title mb-6">
         Please Select Items
       </h1>
