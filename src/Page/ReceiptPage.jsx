@@ -133,7 +133,7 @@ const ReceiptPage = () => {
               SUBTOTAL: ${totalPrice.toFixed(2)}
             </p>
             <p className="text-sm sm:text-base jetbrains-mono-semibold">
-              DISCOUNT: ${totalPrice.toFixed(2)}
+              DISCOUNT: ${totalPrice}
             </p>
             <p className="text-sm sm:text-base jetbrains-mono-semibold">
               TOTAL: ${totalPrice.toFixed(2) - totalPrice}
